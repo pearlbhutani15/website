@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Digital Marketing Agency</title>
+	<style>
+		/* Add the new styles here */
+		.our-product {
+			background-color: white;
+			padding: 50px;
+			text-align: left;
+			margin-top: 50px;
+		}
+
+		.our-product h2 {
+			font-size: 24px;
+			margin-bottom: 20px;
+		}
+
+		.our-product .container {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+
+		.our-product .image-container {
+			width: 50%;
+			margin-right: 20px;
+		}
+
+		.our-product .image-container img {
+			width: 100%;
+			height: auto;
+		}
+
+		.our-product .info-boxes {
+			width: 40%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.our-product .info-box {
+			background-color: #f4f4f4;
+			padding: 20px;
+			margin-bottom: 20px;
+			cursor: pointer;
+		}
+
+		.our-product .info-box:hover {
+			background-color: #ddd;
+		}
+
+		.our-product .info-box h3 {
+			font-size: 18px;
+			margin-bottom: 10px;
+		}
+
+		.our-product .info-box p {
+			font-size: 16px;
+			margin-bottom: 20px;
+		}
+
+		/* Existing styles */
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: sans-serif;
+			background-color: #f4f4f4;
+		}
+
+		.container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 50px;
+		}
+
+		.content {
+			text-align: left;
+			max-width: 500px;
+		}
+
+		h2 {
+			font-size: 36px;
+			font-weight: bold;
+			margin-bottom: 20px;
+		}
+
+		.award-winning {
+			font-size: 16px;
+			color: #FF3147;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+
+		p {
+			line-height: 1.6;
+			margin-bottom: 20px;
+		}
+
+		.button {
+			display: inline-block;
+			padding: 15px 30px;
+			background-color: #FF3147;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			text-decoration: none;
+			font-weight: bold;
+			transition: background-color 0.3s ease;
+		}
+
+		.button:hover {
+			background-color: #c82333;
+		}
+
+		.image {
+			width: 500px;
+		}
+
+		.modal {
+			display: none; /* Hidden by default */
+			position: fixed; /* Stay in place */
+			z-index: 1; /* S		.modal {
+			display: none; /* Hidden by default */
+			position: fixed; /* Stay in place */
+			z-index: 1; /* Sit on top */
+			left: 0;
+			top: 0;
+			width: 100%; /* Full width */
+			height: 100%; /* Full height */
+			overflow: auto; /* Enable scroll if needed */
+			background-color: rgb(0,0,0); /* Fallback color */
+			background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		}
+
+		.modal-content {
+			background-color: #FFFFFF;
+			margin: 15% auto; /* 15% from the top and centered */
+			padding: 20px;
+			border: 1px solid #F1F1F1;
+			border-radius: 5px;
+			width: 450px;
+			height: 362px;
+			top: 0px;
+			left: 0px;
+			opacity: 1;
+		}
+        .contact-us {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+
+        .contact-us h2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        }
+
+        #first-name{
+            padding: 10px;
+    margin: 118px;
+    margin-left: -118px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 198px;
+    box-sizing: border-box;
+    display: inline-block;
+    position: fixed;
+        }
+
+        #last-name{
+            padding: 10px;
+    margin: 118px;
+    margin-left: 354px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 198px;
+    box-sizing: border-box;
+    display: inline-block;
+    position: fixed;
+        }
+
+        .contact-us input[type="email"] {
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        width: 100%;
+        box-sizing: border-box;
+        }
+
+        .contact-us input[type="text"]:first-child {
+        margin-top: 20px;
+        }
+
+        .contact-us label {
+        display: block;
+        margin-bottom: 5px;
+        }
+
+        .contact-us input[type="checkbox"] {
+        margin-right: 5px;
+        }
+
+        .terms {
+        font-size: 14px;
+        margin-top: 115px;
+        }
+
+        .terms a {
+        text-decoration: none;
+        color: #337ab7;
+        }
+
+        .terms a:hover {
+        color: #23527c;
+        }
+
+        .contact-us button[type="submit"] {
+        background-color: #337ab7;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+        }
+
+        .contact-us button[type="submit"]:hover {
+        background-color: #23527c;
+        }
+
+		.close {
+			color: #aaa;
+			float: right;
+			font-size: 28px;
+			font-weight: bold;
+		}
+
+		.close:hover,
+		.close:focus {
+			color: black;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		.what-we-do {
+			background-color: white;
+			padding: 50px;
+			text-align: left;
+		}
+
+		.what-we-do h2 {
+			font-size: 24px;
+			margin-bottom: 20px;
+		}
+
+		.services-container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+
+		.image-container {
+			width: 30%;
+			margin: 20px;
+			position: relative;
+		}
+
+		.image-container img {
+			width: 100%;
+			height: auto;
+			transition: all 0.3s ease;
+		}
+
+		.image-container:hover img {
+			transform: scale(1.1);
+		}
+
+		.hover-overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			opacity: 0;
+			transition: all 0.3s ease;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: white;
+			font-size: 18px;
+			font-weight: bold;
+		}
+
+		.image-container:hover .hover-overlay {
+			opacity: 1;
+			background-color: #FF3147; /* Pink background on hover */
+		}
+
+		.hover-overlay .icon {
+			font-size: 30px;
+			margin-bottom: 10px;
+		}
+
+		.dots {
+			display: flex;
+			justify-content:bottom right;
+			align-items: right;
+			margin-top: 20px;
+		}
+
+		.dot {
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background-color: #ddd;
+			margin: 0 5px;
+			cursor: pointer;
+		}
+
+		.dot.active {
+			background-color: #FF3147;
+		}
+
+		@media screen and (max-width: 768px) {
+			.container {
+				flex-direction: column;
+			}
+
+			.content {
+				margin-bottom: 20px;
+			}
+
+			.image {
+				width: 100%;
+			}
+
+			.what-we-do.image-container {
+				width: 100%;
+			}
+		}
+		#hey
+		{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="content">
+			<h2 class="award-winning">Award Winning</h2>
+			<h2>Digital Marketing Agency</h2>
+			<p>Morbi sed lacus nec risus finibus feugiat et fermentum nibh. Pellentesque vitae ante at elit fringilla ac at purus, Morbi sed lacus nec risus finibus feugiat et fermentum.</p>
+			<button class="button" id="contact-btn" onclick="document.getElementById('contact-modal').style.display='block'">Contact Us</button>
+		</div>
+		<div class="image">
+			<img src="hero.png" alt="Hero Image">
+		</div>
+	</div>
+
+	<!-- What We Do Section -->
+	<section class="what-we-do">
+		<h2 style="color: pink;">What We Do</h2>
+		<div style="display: flex; flex-direction: column; align-items: flex-start;">
+			<h1>SERVICE PROVIDE FOR YOU</h1>
+			<p id="hey">Morbi sed lacus nec risus finibus feugiat et fermentum nibh. Pellentesque 
+				vitae ante at elit fringilla ac at purus, Morbi sed lacus nec risus finibus 
+				feugiat et fermentum
+			</p>
+		</div>
+		<div class="services-container">
+			<div class="image-container">
+				<img src="1.png" alt="Image 1">
+				<div class="hover-overlay">
+					<div style="display: flex; flex-direction: column; align-items: center;">
+						<img src="14.07.2024_19.31.56_REC icsmall.png" alt="" style="width: 45px; height: 40px;">
+						<h3>WEB DEVELOPMENT</h3>
+						<p>  Morbi sed lacus nec risus finibus feugiat et fermentum nibh. Pellentesque</p>
+						<button class="button" style="background-color: white; color: red;" onclick="window.open('https://fylehq.com', '_blank')">Read More-></button>
+					</div>
+				</div>
+			</div>
+			<div class="image-container">
+				<img src="2.png" alt="Image 2">
+				<div class="hover-overlay">
+					<div style="display: flex; flex-direction: column; align-items: center;">
+						<i class="icon fas fa-search"></i>
+						<img src="14.07.2024_19.31.56_REC icsmall.png" alt="" style="width: 45px; height: 40px;">
+						<h3>WEB DEVELOPMENT</h3>
+						<p>  Morbi sed lacus nec risus finibus feugiat et fermentum nibh. Pellentesque</p>
+						<button class="button" style="background-color: white; color: red;" onclick="window.open('https://fylehq.com', '_blank')">Read More-></button>
+					</div>
+				</div>
+			</div>
+			<div class="image-container">
+				<img src="3.png" alt="Image 3">
+				<div class="hover-overlay">
+					<div style="display: flex; flex-direction: column; align-items: center;">
+						<i class="icon fas fa-bullhorn"></i>
+						<img src="14.07.2024_19.31.56_REC icsmall.png" alt="" style="width: 45px; height: 40px;">
+						<h3>WEB DEVELOPMENT</h3>
+						<p>  						Morbi sed lacus nec risus finibus feugiat et fermentum nibh. Pellentesque</p>
+						<button class="button" style="background-color: white; color: red;" onclick="window.open('https://fylehq.com', '_blank')">Read More-></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="dots">
+			<div class="dot active"></div>
+			<div class="dot" onclick="currentSlide(1)"></div>
+			<div class="dot" onclick="currentSlide(1)"></div>
+		</div>
+	</section>
+	<script>
+	var slideIndex = 1;
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("image-container");
+            var dots = document.getElementsByClassName("dot");
+
+            // Wrap around logic
+            if (n > slides.length) { slideIndex = 1; }
+            if (n < 1) { slideIndex = slides.length; }
+
+            // Hide all images
+            for (i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+
+            // Remove active class from all dots
+            for (i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+
+            // Display current slide and activate corresponding dot
+            slides[slideIndex - 1].classList.add("active");
+            dots[slideIndex - 1].classList.add("active");
+        }
+
+        // Initial call to display the first slide
+        showSlides(slideIndex);
+
+        // Function to move to the next slide
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+	</script>
+
+	<!-- Our Project Section -->
+	<!-- Our Project Section -->
+<section class="our-product">
+  <h2 style="text-align: center; color: pink;">Our Project</h2>
+  <h1 style="text-align: center; color: pink;">WHY WE ARE BEST</h1>
+  <div class="container">
+    <div class="image-container">
+      <img src="image.png" alt="Project Image" class="img" id="project-image">
+    </div>
+    <div class="info-boxes">
+      <div class="info-box" onclick="changeImage(this, 'image.png'); this.style.backgroundColor='pink'">
+        <h3 style="text-align: right;">Genderless Kei – Japan’s Hot</h3>
+        <p style="text-align: right;">Set to launch on the manufacturer’s new A330neo aircraft in 2017, it’s offering lots of</p>
+      </div>
+      <div class="info-box" onclick="changeImage(this, 'image.png'); this.style.backgroundColor='pink'">
+        <h3 style="text-align: right;">Better Strategy & Quality</h3>
+        <p style="text-align: right;">Set to launch on the manufacturer’s new A330neo aircraft in 2017, it’s offering lots of</p>
+      </div>
+      <div class="info-box" onclick="changeImage(this, 'image.png'); this.style.backgroundColor='pink'">
+        <h3 style="text-align: right;">Genderless Kei – Japan’s Hot</h3>
+        <p style="text-align: right;">Set to launch on the manufacturer’s new A330neo aircraft in 2017, it’s offering lots of</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function changeImage(element, imageUrl) {
+    document.getElementById('project-image').src = imageUrl;
+  }
+</script>
+
+	<!-- Contact Modal -->
+	<div id="contact-modal" class="modal">
+		<div class="modal-content">
+			<span class="close" onclick="document.getElementById('contact-modal').style.display='none'">&times;</span>
+			<form action="https://getform.io/f/amdpkrjb" method="POST">
+				<div class="contact-us">
+					<h2>Talk to us</h2>
+					<input type="email" id="work-email" placeholder="Work email *" required>
+					<input type="text" id="first-name" placeholder="First name *" required> 
+					<input type="text" id="last-name" placeholder="Last name *" required>
+					<input type="hidden" name="_gotcha" style="display:none !important">
+					<div class="terms">
+					  <input type="checkbox" id="terms-checkbox" required>
+					  <span for="terms-checkbox">I agree to Fyle's terms and conditions, and provide consent to send me communication.</span>
+					</div>
+					<button class="button" type="submit" style="background-color: #FF3147; color: white;">Contact Us</button>
+				  </div>
+			</form>
+		</div>
+	</div>
+
+	<script>
+		// Get the modal
+		var modal = document.getElementById('contact-modal');
+
+		// Get the button that opens the modal
+		var btn = document.getElementById('contact-btn');
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName('close')[0];
+
+		// When the user clicks the button, open the modal
+		btn.onclick = function() {
+			modal.style.display = 'block';
+		}
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() {
+			modal.style.display = 'none';
+		}
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = 'none';
+			}
+		}
+  function highlightImage() {
+    var images = document.querySelectorAll('.image-container');
+
+    for (var i = 0; i < images.length; i++) {
+      images[i].addEventListener('click', function() {
+        this.classList.toggle('highlight');
+      });
+    }
+  }
+	</script>
+</body>
+</html>
+
+<section class="experts-growths">
+  <h2 style="text-align: center; color: pink;">EXPERTS GROWTS</h2>
+  <h1 style="text-align: center; font-weight: bold;">OUR COMPANY GROWTH</h1>
+  <div class="container">
+    <div class="image-container">
+      <img src="20.png" alt="Image 1" class="img" id="image-1" onchange="highlightImage()">
+      <div class="hover-overlay1">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+        </div>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="21.png" alt="Image 2" class="img" id="image-2" onchange="highlightImage()">
+      <div class="hover-overlay1">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+        </div>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="22.png" alt="Image 3" class="img" id="image-3" onchange="highlightImage()">
+      <div class="hover-overlay1">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+        </div>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="23.png" alt="Image 4" class="img" id="image-4" onchange="highlightImage()">
+      <div class="hover-overlay1">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
